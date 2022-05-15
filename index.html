@@ -46,17 +46,11 @@
                 
             </div>
         </div>
-        <span class="audio" autostart="true" onclick="playAudio()">(Click for audio)</span> 
-        <audio controls autoplay>
-            <source src="assets/soundtrack.mp3" type="audio/mpeg"> 
+        <audio autoplay>
+            <source src="assets/soundtrack.mp3">
+            <source src="assets/soundtrack.wav">
+
         </audio>
-        <script>
-             document.getElementById("body").addEventListener("mousemove", function(event) {
-                document.querySelector('audio').play()
-            });
-            
-            
-        </script>
     </body>
 </html>
 
