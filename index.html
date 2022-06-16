@@ -1,74 +1,61 @@
-
-<!doctype html>
-<html lang="en">
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!---Edit the name to whatever you want it to show in here: https://i.imgur.com/5H3Hyjq.png --><title>Cubixty</title>
-
-        <!-- here as well (this will show on Google & whenever you type in the link for the site on discord or twitter or whatever, will create an embed) -->
-        <meta property="og:title" content="Cubixty" /> 
-        <meta property="og:type" content="@cub1xty personal website" />
-        <meta property="og:url" content="http://my.site.com" />
-        <meta property="og:image" content="http://my.site.com/images/thumb.png" />
-        <meta property="og:description" content="@cub1xty personal website" />
-        <meta name="theme-color" content="#FF0000">
-        <meta name="twitter:card" content="summary_large_image">
+<!DOCTYPE html>
+<html onclick="play()" lang="en">
 
 
-        <link href="assets/js/css/hover-min.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/style.css"> <!--Don't remove this, it gives the styles implemented into the front end so if you take this off, it will look like html2-->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
-    </head>
-    <body>
-        <div class="background">
-            <img src="assets/akali.jpg" width="200" height="200">
-            <img src="assets/background.gif" alt="background image"/> <!--Replace the gif file with something else-->
-        </div>
-        <div class="wrapper">
-            <div class="inner">
-                <!---your name--><h1>Cubixty</h1>
-                <!---slogan or some shit u want it to say--><h2>#0001</h2>
-                <div class="row">
-                    <div class="column">
-                        <a class="hvr-grow" href="https://twitter.com/cub1xty" target="_blank"><img src="assets/twitterr.png" width="50" height="50"></a>
-                        </div>
-                    <div class="column">
-                        <a class="hvr-grow" href="https://github.com/cubixty" target="_blank"><img src="assets/github1.png" width="50" height="50"></a>
-                    </div>
-                    <div class="column">
-                        <a class="hvr-grow" href="https://instagram.com/cub1xty" target="_blank"><img src="assets/insta.png" width="50" height="50"></a>
-                    </div>
-                </div>
-                
+<head>
+    <title>Cubixty</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/config.css" />
+    <link rel="stylesheet" href="css/morquee.css" />
+    <link rel="stylesheet" href="css/noise.css" />
+    <script src="../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery.marquee.js" type="text/javascript"></script>
+    <script src="js/jquery.clicktoenter.html" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+</head>
+
+<body>
+    <div id="enter"><b class="begin">Click to enter</b></div> <!-- the enter part of the site, css does transition where it turns the screen opaque -->
+    <div id="main">
+        <video id="video" src="assets/media/rip.mp4" loop></video> <!-- the video -->
+        <div class="overlay"> <!-- overlay over the video, needed if its a video, if gif then it isn't required -->
+            <div class="marquee-container">
+                <pre>|<div id="marquee" class="marquee" >Cubixty#0001   |   771036335170388029</div>|</pre>
             </div>
         </div>
-        <audio autoplay>
-            <source src="assets/soundtrack.mp3">
-            <source src="assets/soundtrack.wav">
+        <div class="social"> <!-- socials part in the middle -->
+            <a href='https://discord.com/users/771036335170388029' target='_blank'><img src='media/images/dc.png' onmouseover="this.src='media/images/dchover.png'" onmouseout="this.src='media/images/dc.png'"></a>
+            <a href='https://github.com/cubixty' target='_blank'><img src='media/images/github.png' onmouseover="this.src='media/images/githubhover.png'" onmouseout="this.src='media/images/github.png'"></a>
+            <a href='https://ogu.gg/cubixty' target='_blank'><img src='media/images/ogu.png' onmouseover="this.src='media/images/oguhover.png'" onmouseout="this.src='media/images/ogu.png'"></a>
+        </div>
+        <script>
+            // script is needed for marquee to work
+            $('.marquee').marquee({ // ('.marquee') part tells the script where it should work or something
+            duration: 5000,
+            gap: 0,
+            delayBeforeStart: 0,
+            direction: 'left',
+            duplicated: false
+            });
+        </script>
+        <script> //click to start video script
+            function play() {
+                var video = document.getElementById("video");
+                video.play();
+                video.volume = 0.2;
+            }
+        </script>
+        <script> // click to enter script
+            $('.begin').click(function () {
+                $(this).parent('#enter').fadeOut(1);
+            });
+        </script>
+        <div id="pattern"></div><canvas id="noise" class="noise fixed-fluid"></canvas> <!-- grid overlay + the noise -->
+        <script src="js/noise.js" type="text/javascript"></script> <!-- noise script, for some reason it has to be at the end, no idea why -->
+    </div>
+    
+</body>
 
-        </audio>
-    </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-wwsd  dwdadwd
