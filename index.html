@@ -1,79 +1,55 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cubixty</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- made by ogu.gg/luna -->
+    <div id="overlay">
+        <p id="entertext">Click to enter...</p>
+    </div>
+    <div id="socials">
+        <a href="https://github.com/Cubixty" target="_blank">
+            <img id="discord" src="/assets/github.png">
+        </a>
+        <a href="https://instagram.com/cub1xty" target="_blank">
+            <img id="ig" src="/assets/ig.svg">
+        </a>
+        <a href="https://snapchat.com/add/cub1xty" target="_blank">
+            <img id="ogu" src="/assets/snap.png">
+        </a>
+    </div>
+    <div id="credit">
+        <p id="creditText">لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا</p>
+    </div>
+    
+    <video id="video-background" src="/assets/background.mp4" autoplay muted loop></video>
+    <script>
+        const sound = new Howl({
+            src: ['/assets/audio.mp3'],
+            html5: true,
+            loop: true
+        });
 
-    <!---Edit the name to whatever you want it to show in here: https://i.imgur.com/5H3Hyjq.png --><title>cub</title>
-
-        <!-- here as well (this will show on Google & whenever you type in the link for the site on discord or twitter or whatever, will create an embed) -->
-        <meta property="og:title" content="Site Title" /> 
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://my.site.com" />
-        <meta property="og:image" content="http://my.site.com/images/thumb.png" />
-        <meta property="og:description" content="Site description" />
-        <meta name="theme-color" content="#FF0000">
-        <meta name="twitter:card" content="summary_large_image">
-
-
-        <link href="assets/js/css/hover-min.css" rel="stylesheet">
-        <link rel="stylesheet" href="assets/style.css"> <!--Don't remove this, it gives the styles implemented into the front end so if you take this off, it will look like html2-->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
-    </head>
-    <body>
-        <div class="background">
-            <img src="assets/background.gif" alt="background image"/> <!--Replace the gif file with something else-->
-        </div>
-        <div class="wrapper">
-            <div class="inner">
-                <!---your name--><h1>cubixty</h1>
-                <!---slogan or some shit u want it to say--><h2></h2>
-                <div class="row">
-                    <div class="column">
-                        <a class="hvr-grow" href="https://discordapp.com/users/749141638462308353" target="_blank"><img src="assets/discord-512.webp" width="50" height="50"></a>
-                        </div>
-                    <div class="column">
-                        <a class="hvr-grow" href="https://github.com/cubixty" target="_blank"><img src="assets/25231.png" width="50" height="50"></a>
-                    </div>
-                    <div class="column">
-                        <a class="hvr-grow" href="https://instagram.com/cub1xty" target="_blank"><img src="assets/1024px-Instagram_icon.png" width="50" height="50"></a>
-                    </div>
-                </div>
+        const divElements = document.getElementsByTagName('div');
+        divElements[0].addEventListener('click', () => {
+            if (divElements[0].classList.contains("hidden")) {
+                return
+            } else{
+                sound.play();
+                divElements[0].classList.add("hidden");
+                setTimeout(() => {
+                    divElements[0].style.zIndex = 0; 
+                }, 1250)
                 
-            </div>
-        </div>
-        <span class="audio" autostart="true" onclick="playAudio()">(Click for audio)</span> 
-        <audio controls autoplay>
-            <source src="assets/soundtrack.mp3" type="audio/mpeg"> 
-        </audio>
-        <script>
-             document.getElementById("body").addEventListener("mousemove", function(event) {
-                document.querySelector('audio').play()
-            });
-            
-            
-        </script>
-    </body>
+            }                     
+        })    
+    </script>
+    <!-- made by ogu.gg/luna -->
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-wwsd  dwdadwd
