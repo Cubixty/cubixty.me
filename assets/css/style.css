@@ -48,13 +48,15 @@ body {
     font-family: "Kay Pho Du", serif;
     font-weight: 500;
     font-size: 11px;
-    padding: 8%;
-    margin-top: 20%;
-    margin-left: 35.4%;
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+
+}
+
+h2 {
     text-align: center;
-    
-
-
 }
 
 #enter {
